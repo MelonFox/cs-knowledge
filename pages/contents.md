@@ -1,0 +1,3 @@
+- 技术翻译
+	- [[Retaining Computer Science Knowledge]]
+-
