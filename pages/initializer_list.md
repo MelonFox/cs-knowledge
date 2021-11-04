@@ -53,7 +53,32 @@
                               &ustOrder.DI_ExchangeAccountID});
   ```
 -
-### 绑定到auto
-- todo
+### 和auto，for循环配合
 -
+  ```c++
+  for (auto n : s.v)
+    std::cout << n << ' ';
+  std::cout << '\n';
+  
+  std::cout << "Range-for over brace-init-list: \n";
+  
+  for (int x : {-1, -2, -3}) // auto 的规则令此带范围 for 工作
+    std::cout << x << ' ';
+  std::cout << '\n';
+  
+  auto al = {10, 11, 12};   // auto 的特殊规则
+  
+  std::cout << "The list bound to auto has size() = " << al.size() << '\n';
+  ```
 -
+### 作为模版参数
+-
+  ```c++
+  template <typename T>
+  void templated_fn(T) {}
+  
+  // templated_fn({1, 2, 3}); // 编译错误！“ {1, 2, 3} ”不是表达式，
+                               // 它无类型，故 T 无法推导
+  templated_fn<std::initializer_list<int>>({1, 2, 3}); // OK
+  templated_fn<std::vector<int>>({1, 2, 3});           // 也 OK
+  ```
