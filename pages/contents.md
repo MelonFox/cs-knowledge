@@ -6,6 +6,9 @@
 	- [[Effective C++]]
 	- [[c++11]]
 	- [[C++ Tips]]
+	- [[性能优化专题]]
 - 开源库
 	- [[spdlog - C++日志库]]
 	-
+- GCC
+	- [[gcc tips]]

@@ -51,6 +51,15 @@
                               &ustOrder.DI_InstrumentID, 
                               &ustOrder.DI_CombPositionID, 
                               &ustOrder.DI_ExchangeAccountID});
+  
+  //可以先初始化列表，再调用
+  initializer_list<char*> args = {"abc","def","xyz"};
+  initializer_list<LPDATAINFO> datainfos = {&ustOrder.DI_OrderRef, 
+                              &ustOrder.DI_ExchangeID, 
+                              &ustOrder.DI_InstrumentID, 
+                              &ustOrder.DI_CombPositionID, 
+                              &ustOrder.DI_ExchangeAccountID};
+  DataAppend(dtStorage, args, datainfos);
   ```
 -
 ### 和auto，for循环配合
